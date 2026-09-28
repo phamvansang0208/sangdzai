@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chúc ngủ ngon ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            overflow: hidden;
+            color: white;
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(white 1px, transparent 1px);
+            background-size: 45px 45px;
+            opacity: 0.5;
+        }
+
+        .card {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px 25px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        .moon {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 10px 0 20px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #ff6b9a;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: baylen 5s linear infinite;
+        }
+
+        @keyframes baylen {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <div class="card">
+
+        <div class="moon">🌙</div>
+
+        <h1>Chúc ngủ ngon ❤️</h1>
+
+        <p>
+            Chúc vợ yêu ngủ thật ngon nhé! 🌙
+            <br>
+            Mong em có một giấc ngủ thật bình yên,
+            <br>
+            thật nhiều giấc mơ đẹp.
+            <br><br>
+            Ngủ ngoan và mơ về anh nhé ❤️
+        </p>
+
+        <button onclick="showMessage()">
+            Nhấn vào đây 💌
+        </button>
+
+        <div id="message">
+            Chúc em buổi tối thật vui,
+            ngủ thật ngon và sáng mai thức dậy
+            với một nụ cười thật tươi nhé! 🥰
+            <br><br>
+            🌙✨❤️
+        </div>
+
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration =
+                (3 + Math.random() * 4) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
