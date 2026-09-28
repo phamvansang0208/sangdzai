@@ -1,0 +1,713 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Love ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #5d1a68 0%,
+                    #26002f 45%,
+                    #0d0014 100%
+                );
+
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* =========================
+           NGÔI SAO
+        ========================= */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 8px white;
+
+            animation: twinkle 2s infinite alternate;
+        }
+
+        .star:nth-child(1) {
+            top: 15%;
+            left: 10%;
+        }
+
+        .star:nth-child(2) {
+            top: 25%;
+            left: 80%;
+        }
+
+        .star:nth-child(3) {
+            top: 70%;
+            left: 15%;
+        }
+
+        .star:nth-child(4) {
+            top: 80%;
+            left: 85%;
+        }
+
+        .star:nth-child(5) {
+            top: 35%;
+            left: 45%;
+        }
+
+        .star:nth-child(6) {
+            top: 10%;
+            left: 60%;
+        }
+
+        .star:nth-child(7) {
+            top: 60%;
+            left: 70%;
+        }
+
+        .star:nth-child(8) {
+            top: 85%;
+            left: 40%;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+
+        /* =========================
+           VÒNG TRÁI TIM
+        ========================= */
+
+        .heart-container {
+            position: relative;
+
+            width: 300px;
+            height: 300px;
+
+            animation:
+                rotateCircle 8s linear infinite;
+        }
+
+        @keyframes rotateCircle {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* =========================
+           TRÁI TIM NHỎ
+        ========================= */
+
+        .heart {
+            position: absolute;
+
+            width: 35px;
+            height: 35px;
+
+            background: #ff3d81;
+
+            transform: rotate(45deg);
+
+            box-shadow:
+                0 0 10px #ff3d81,
+                0 0 25px #ff3d81;
+        }
+
+        .heart::before,
+        .heart::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 35px;
+            height: 35px;
+
+            background: #ff3d81;
+
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -18px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: -18px;
+        }
+
+
+        /* Vị trí 8 trái tim */
+
+        .heart:nth-child(1) {
+            top: 0;
+            left: 132px;
+        }
+
+        .heart:nth-child(2) {
+            top: 45px;
+            right: 45px;
+        }
+
+        .heart:nth-child(3) {
+            top: 132px;
+            right: 0;
+        }
+
+        .heart:nth-child(4) {
+            bottom: 45px;
+            right: 45px;
+        }
+
+        .heart:nth-child(5) {
+            bottom: 0;
+            left: 132px;
+        }
+
+        .heart:nth-child(6) {
+            bottom: 45px;
+            left: 45px;
+        }
+
+        .heart:nth-child(7) {
+            top: 132px;
+            left: 0;
+        }
+
+        .heart:nth-child(8) {
+            top: 45px;
+            left: 45px;
+        }
+
+
+        /* =========================
+           TRÁI TIM GIỮA
+        ========================= */
+
+        .center-heart {
+
+            position: fixed;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            font-size: 85px;
+
+            cursor: pointer;
+
+            z-index: 20;
+
+            user-select: none;
+
+            filter:
+                drop-shadow(0 0 10px #ff3d81)
+                drop-shadow(0 0 30px #ff3d81);
+
+            animation:
+                heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.2);
+            }
+
+        }
+
+
+        /* =========================
+           CHIM BỒ CÂU
+        ========================= */
+
+        .bird {
+
+            position: fixed;
+
+            left: 50%;
+            top: 50%;
+
+            font-size: 70px;
+
+            z-index: 50;
+
+            pointer-events: none;
+
+            animation:
+                flyBird 3.5s ease-out forwards;
+        }
+
+        @keyframes flyBird {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.2)
+                    rotate(-10deg);
+            }
+
+            15% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1)
+                    rotate(0deg);
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(400px, -350px)
+                    scale(1.4)
+                    rotate(15deg);
+            }
+
+        }
+
+
+        /* =========================
+           TIM BAY
+        ========================= */
+
+        .small-heart {
+
+            position: fixed;
+
+            left: 50%;
+            top: 50%;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            z-index: 40;
+
+            animation:
+                heartFly 2.5s ease-out forwards;
+        }
+
+        @keyframes heartFly {
+
+            0% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0);
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    translate(
+                        calc(-50% + var(--x)),
+                        calc(-50% + var(--y))
+                    )
+                    scale(1.5);
+            }
+
+        }
+
+
+        /* =========================
+           LỜI HỎI HAN
+        ========================= */
+
+        .love-message {
+
+            position: fixed;
+
+            left: 50%;
+            top: 72%;
+
+            transform:
+                translate(-50%, -50%)
+                scale(0.5);
+
+            z-index: 100;
+
+            color: white;
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+            white-space: nowrap;
+
+            text-shadow:
+                0 0 8px #ff69b4,
+                0 0 18px #ff1493,
+                0 0 35px #ff69b4;
+
+            animation:
+                messageAppear 1.5s ease forwards;
+        }
+
+        @keyframes messageAppear {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.4);
+            }
+
+            60% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+            }
+
+        }
+
+
+        /* =========================
+           NÚT HƯỚNG DẪN
+        ========================= */
+
+        .hint {
+
+            position: fixed;
+
+            bottom: 35px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            color: #ffd6ed;
+
+            font-size: 15px;
+
+            opacity: 0.8;
+
+            z-index: 10;
+
+            animation:
+                hintFade 2s infinite alternate;
+        }
+
+        @keyframes hintFade {
+
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .heart-container {
+
+                width: 240px;
+                height: 240px;
+            }
+
+            .heart {
+
+                width: 28px;
+                height: 28px;
+            }
+
+            .heart::before,
+            .heart::after {
+
+                width: 28px;
+                height: 28px;
+            }
+
+            .center-heart {
+
+                font-size: 70px;
+            }
+
+            .love-message {
+
+                font-size: 23px;
+            }
+
+            .bird {
+
+                font-size: 55px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SAO
+    ========================= -->
+
+    <div class="stars">
+
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         VÒNG TRÁI TIM
+    ========================= -->
+
+    <div class="heart-container">
+
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         TRÁI TIM GIỮA
+    ========================= -->
+
+    <div
+        class="center-heart"
+        onclick="releaseBird()"
+    >
+        ❤️
+    </div>
+
+
+
+    <!-- =========================
+         HƯỚNG DẪN
+    ========================= -->
+
+    <div class="hint">
+        Chạm vào trái tim ❤️
+    </div>
+
+
+
+    <script>
+
+        function releaseBird() {
+
+
+            /* =========================
+               CHIM BỒ CÂU
+            ========================= */
+
+            const bird =
+                document.createElement("div");
+
+            bird.className = "bird";
+
+            bird.innerHTML = "🕊️";
+
+            document.body.appendChild(bird);
+
+
+
+            /* =========================
+               TIM NHỎ BAY RA
+            ========================= */
+
+            for (let i = 0; i < 18; i++) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.className =
+                    "small-heart";
+
+                heart.innerHTML = "💗";
+
+
+                /* Vị trí ngẫu nhiên */
+
+                const x =
+                    Math.random() * 500 - 250;
+
+                const y =
+                    Math.random() * 500 - 250;
+
+
+                heart.style.setProperty(
+                    "--x",
+                    x + "px"
+                );
+
+                heart.style.setProperty(
+                    "--y",
+                    y + "px"
+                );
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                /* Xóa tim */
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 2500);
+
+            }
+
+
+
+            /* =========================
+               HIỆN LỜI HỎI HAN
+            ========================= */
+
+            setTimeout(() => {
+
+                const message =
+                    document.createElement("div");
+
+                message.className =
+                    "love-message";
+
+                message.innerHTML =
+                    "💗 Vợ đi làm có mệt hong 💗";
+
+
+                document.body.appendChild(
+                    message
+                );
+
+
+            }, 2200);
+
+
+
+            /* =========================
+               XÓA CHIM
+            ========================= */
+
+            setTimeout(() => {
+
+                bird.remove();
+
+            }, 3500);
+
+        }
+
+    </script>
+
+
+</body>
+</html>
+```
